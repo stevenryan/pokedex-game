@@ -1,0 +1,12 @@
+@font-face{
+  font-family: headerFont;
+  src: url(fonts/Ketchum.otf);
+}
+
+@font-face{
+  font-family: generalText;
+  src: url(fonts/PokemonClassic.ttf);
+}
+
+$header-font: "headerFont";
+$text-font: "generalText";
