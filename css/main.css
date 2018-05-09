@@ -1,8 +1,37 @@
 @font-face {
   font-family: headerFont;
-  src: url(fonts/Ketchum.otf); }
+  src: url(../fonts/Ketchum.otf); }
 @font-face {
   font-family: generalText;
-  src: url(fonts/PokemonClassic.ttf); }
+  src: url(../fonts/PokemonClassic.ttf); }
+@font-face {
+  font-family: unknown;
+  src: url(../fonts/unown.ttf); }
+body {
+  background: url(../images/kanto-bg2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
+
+#title {
+  font-family: headerFont;
+  font-size: 64px;
+  color: yellow;
+  text-shadow: -3px 0 #3399ff, 0 3px #3399ff, 3px 0 #3399ff, 0 -3px #3399ff;
+  margin-bottom: -20px;
+  margin-top: -1px; }
+
+#generation {
+  font-family: generalText;
+  margin-bottom: -1px; }
+
+.header {
+  width: 80%;
+  text-align: center;
+  background: rgba(226, 226, 226, 0.5);
+  margin: 10px auto;
+  border-radius: 20px;
+  justify-content: center;
+  padding: 10px 0; }
 
 /*# sourceMappingURL=main.css.map */

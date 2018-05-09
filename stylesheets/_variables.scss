@@ -1,12 +1,18 @@
 @font-face{
   font-family: headerFont;
-  src: url(fonts/Ketchum.otf);
+  src: url(../fonts/Ketchum.otf);
 }
 
 @font-face{
   font-family: generalText;
-  src: url(fonts/PokemonClassic.ttf);
+  src: url(../fonts/PokemonClassic.ttf);
+}
+
+@font-face{
+  font-family: unknown;
+  src: url(../fonts/unown.ttf)
 }
 
 $header-font: "headerFont";
 $text-font: "generalText";
+$unkown-font: "unkown";
