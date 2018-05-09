@@ -15,14 +15,15 @@ body {
 
 #title {
   font-family: headerFont;
-  font-size: 64px;
+  font-size: 60px;
   color: yellow;
   text-shadow: -3px 0 #3399ff, 0 3px #3399ff, 3px 0 #3399ff, 0 -3px #3399ff;
-  margin-bottom: -20px;
+  margin-bottom: -30px;
   margin-top: -1px; }
 
 #generation {
   font-family: generalText;
+  font-size: 18px;
   margin-bottom: -1px; }
 
 .header {
