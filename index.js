@@ -11,7 +11,6 @@ var hintBox = document.getElementById("hintBox")
 var type = document.getElementById("type")
 var type2 = document.getElementById("type2")
 var resetBttn = document.getElementById("resetBttn")
-var lives = 6;
 var entries = []
 
 class Pokedex{
@@ -36,14 +35,85 @@ var entry8 = new Pokedex("Wartortle", 8, "Water", "", "It cleverly controls its 
 var entry9 = new Pokedex("Blastoise", 9, "Water", "", "The rocket cannons on its shell fire jets of water capable of punching holes through thick steel.")
 
 function newGame(){
+  var lives = 6;
+  hintDisplay();
+  livesDisplay();
+  guessedLetters = []
+
+  for(let x=0; x<letters.length; x++){letters[x].disabled = false;}
+
   randomNum = Math.floor(Math.random() * Math.floor(entries.length));
-  pokeActual = entries[randomNum].name.toUpperCase();
-  pokeHidden = pokeActual.replace(/[a-z]/gi, "_" + " ");
-  pokemonName.innerHTML = pokeHidden;
+  pokeActual = entries[randomNum].name.toUpperCase().split("");
+  pokeHidden = pokeActual.map(function(x){return "_"});
+  pokemonName.innerHTML = pokeHidden.join(" ");
+
+  function livesDisplay(){
+    if (lives === 6) {
+      life1.src = "images/pokeball-life.png";
+      life2.src = "images/pokeball-life.png";
+      life3.src = "images/pokeball-life.png";
+      life4.src = "images/pokeball-life.png";
+      life5.src = "images/pokeball-life.png";
+      life6.src = "images/pokeball-life.png";
+    } else if (lives === 5){
+      life6.src = "images/lost-life.png";
+    } else if (lives === 4){
+      life5.src = "images/lost-life.png";
+    } else if (lives === 3){
+      life4.src = "images/lost-life.png";
+    } else if (lives === 2){
+      life3.src = "images/lost-life.png";
+    } else if (lives === 1){
+      life2.src = "images/lost-life.png";
+    } else if (lives === 0){
+      life1.src = "images/lost-life.png";
+      loseModal();
+    } else {}
+  }
+
+  function hintDisplay(){
+    var hintShow = false;
+    hintBttn.addEventListener("click", function(){
+      if (hintShow === false){
+        hintBox.style.visibility = "visible";
+        hintBttn.innerHTML = "<i class='fas fa-times fa-2x'></i>";
+        type.innerHTML = entries[randomNum].type;
+        type2.innerHTML = entries[randomNum].type2;
+        hintShow = true;
+      } else {
+        hintBox.style.visibility = "hidden";
+        hintBttn.innerHTML = "<i class='fas fa-question fa-2x'></i>"
+        hintShow = false;
+      }
+    })
+  }
+
+  function loseModal(){
+
+  }
+
+  function winModal(){
+    
+  }
 
   for(let i=0; i<letters.length; i++){
     letters[i].addEventListener("click", function(){
-      
+      if (guessedLetters.includes(letters[i].value)){
+      }else{
+        if (pokeActual.includes(letters[i].value)){
+          for(let j=0; j<pokeActual.length; j++){
+            if (pokeActual[j] === letters[i].value){
+              pokeHidden.splice(j, 1, letters[i].value);
+            }
+          }
+          pokemonName.innerHTML = pokeHidden.join(" ");
+        }else{
+          lives--;
+          livesDisplay();
+        }
+        guessedLetters.push(letters[i].value);
+        letters[i].disabled = true;
+      }
     })
   }
 }
