@@ -32,7 +32,7 @@ var entry5 = new Pokedex("Charmeleon", 5, "Fire", "", "It is very hot-headed by 
 var entry6 = new Pokedex("Charizard", 6, "Fire", "Flying", "Breathing intense, hot flames, it can melt almost anything. Its breath inflicts terrible pain on enemies.")
 var entry7 = new Pokedex("Squirtle", 7, "Water", "", "It shelters itself in its shell, then strikes back with spouts of water at every opportunity.")
 var entry8 = new Pokedex("Wartortle", 8, "Water", "", "It cleverly controls its furry ears and tail to maintain its balance while swimming.")
-var entry9 = new Pokedex("Blastoise", 9, "Water", "", "The rocket cannons on its shell fire jets of water capable of punching holes through thick steel.")
+var entry9 = new Pokedex("Blastoiseb", 9, "Water", "", "The rocket cannons on its shell fire jets of water capable of punching holes through thick steel.")
 
 function newGame(){
   var lives = 6;
@@ -93,7 +93,7 @@ function newGame(){
   }
 
   function winModal(){
-    
+
   }
 
   for(let i=0; i<letters.length; i++){
