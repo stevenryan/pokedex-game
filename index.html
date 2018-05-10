@@ -11,39 +11,69 @@
 <body>
   <div class="wrapper">
     <div class="header">
-      <h1 id="title">Guess that Pokemon!</h1>
+      <h1 id="title">Name that Pokemon!</h1>
       <h3 id="generation">Gen I</h3>
     </div>
     <div class="display">
+      <div class="wordOutput">
+      <p>Pokemon:</p>
+      <h1 id="pokemonName"></h1>
+      </div>
 
+      <div class="lives">
+        <p>Lives:</p>
+        <img id="life1" src="images/pokeball-life.png" alt="">
+        <img id="life2" src="images/pokeball-life.png" alt="">
+        <img id="life3" src="images/pokeball-life.png" alt="">
+        <img id="life4" src="images/pokeball-life.png" alt="">
+        <img id="life5" src="images/pokeball-life.png" alt="">
+        <img id="life6" src="images/pokeball-life.png" alt="">
+      </div>
+
+      <div class="hintSection">
+        <button id="hintBttn">?</button>
+        <div id="hintBox">
+          <div id="type"></div>
+          <div id="type2"></div>
+        </div>
+      </div>
     </div>
     <div class="keyboard">
-      <button class="letters" value="a">A</button>
-      <button class="letters" value="b">B</button>
-      <button class="letters" value="c">C</button>
-      <button class="letters" value="d">D</button>
-      <button class="letters" value="e">E</button>
-      <button class="letters" value="f">F</button>
-      <button class="letters" value="g">G</button>
-      <button class="letters" value="h">H</button>
-      <button class="letters" value="i">I</button>
-      <button class="letters" value="j">J</button>
-      <button class="letters" value="k">K</button>
-      <button class="letters" value="l">L</button>
-      <button class="letters" value="m">M</button>
-      <button class="letters" value="n">N</button>
-      <button class="letters" value="o">O</button>
-      <button class="letters" value="p">P</button>
-      <button class="letters" value="q">Q</button>
-      <button class="letters" value="r">R</button>
-      <button class="letters" value="s">S</button>
-      <button class="letters" value="t">T</button>
-      <button class="letters" value="u">U</button>
-      <button class="letters" value="v">V</button>
-      <button class="letters" value="w">W</button>
-      <button class="letters" value="x">X</button>
-      <button class="letters" value="y">Y</button>
-      <button class="letters" value="z">Z</button>
+      <div class="row1">
+        <button class="letters" value="a">A</button>
+        <button class="letters" value="b">B</button>
+        <button class="letters" value="c">C</button>
+        <button class="letters" value="d">D</button>
+        <button class="letters" value="e">E</button>
+        <button class="letters" value="f">F</button>
+        <button class="letters" value="g">G</button>
+        <button class="letters" value="h">H</button>
+        <button class="letters" value="i">I</button>
+        <button class="letters" value="j">J</button>
+        <button class="letters" value="k">K</button>
+        <button class="letters" value="l">L</button>
+        <button class="letters" value="m">M</button>
+      </div>
+
+      <div class="row2">
+        <button class="letters" value="n">N</button>
+        <button class="letters" value="o">O</button>
+        <button class="letters" value="p">P</button>
+        <button class="letters" value="q">Q</button>
+        <button class="letters" value="r">R</button>
+        <button class="letters" value="s">S</button>
+        <button class="letters" value="t">T</button>
+        <button class="letters" value="u">U</button>
+        <button class="letters" value="v">V</button>
+        <button class="letters" value="w">W</button>
+        <button class="letters" value="x">X</button>
+        <button class="letters" value="y">Y</button>
+        <button class="letters" value="z">Z</button>
+      </div>
+
+      <div id="resetBttn">
+        <p>Reset</p>
+      </div>
     </div>
   </div>
   <script type="text/javascript" src="index.js"></script>

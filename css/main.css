@@ -7,6 +7,11 @@
 @font-face {
   font-family: unknown;
   src: url(../fonts/unown.ttf); }
+.wrapper {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 3.5fr 1fr; }
+
 body {
   background: url(../images/kanto-bg2.png);
   background-size: cover;
@@ -18,7 +23,7 @@ body {
   font-size: 60px;
   color: yellow;
   text-shadow: -3px 0 #3399ff, 0 3px #3399ff, 3px 0 #3399ff, 0 -3px #3399ff;
-  margin-bottom: -30px;
+  margin-bottom: -20px;
   margin-top: -1px; }
 
 #generation {
@@ -29,10 +34,96 @@ body {
 .header {
   width: 80%;
   text-align: center;
+  grid-row-start: 1;
+  grid-row-end: 2;
   background: rgba(226, 226, 226, 0.5);
   margin: 10px auto;
   border-radius: 20px;
   justify-content: center;
   padding: 10px 0; }
+
+.display {
+  width: 80%;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  margin: 10px auto;
+  background: rgba(226, 226, 226, 0.5);
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  grid-template-rows: 3fr 1fr; }
+
+.wordOutput {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  border: 2px solid;
+  margin: 10px;
+  text-align: center; }
+
+.wordOutput p {
+  font-family: generalText;
+  font-size: 16px; }
+
+#pokemonName {
+  font-size: 64px;
+  margin-top: 100px; }
+
+.lives {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  border: 2px solid red;
+  margin: 10px;
+  text-align: center;
+  font-family: generalText;
+  font-size: 12px; }
+
+.lives img {
+  width: 50px;
+  margin: 0 auto; }
+
+.hintSection {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  border: 2px solid blue;
+  margin: 10px; }
+
+.keyboard {
+  width: 80%;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  margin: 10px auto;
+  background: rgba(226, 226, 226, 0.5);
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+  grid-template-rows: auto auto; }
+
+.row1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2; }
+
+.row2 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3; }
+
+#resetBttn {
+  float: right;
+  background-color: #66c2ff;
+  margin: 20px;
+  border-radius: 10px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3; }
 
 /*# sourceMappingURL=main.css.map */
