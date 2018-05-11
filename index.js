@@ -85,6 +85,7 @@ function newGame(){
 
   function hintDisplay(){
     var hintShow = false;
+    hintBttn.innerHTML = "<i class='fas fa-question fa-2x'></i>"
     hintBox.style.visibility = "hidden";
     hintBttn.addEventListener("click", function(){
       if (hintShow === false){
@@ -93,7 +94,11 @@ function newGame(){
         type.innerHTML = entries[randomNum].type;
         type.style.backgroundColor = typeColor(entries[randomNum].type)
         type2.innerHTML = entries[randomNum].type2;
-        type2.style.backgroundColor = typeColor(entries[randomNum].type2)
+        if (entries[randomNum].type2===""){
+          type2.style.visibility = "hidden"
+        } else {
+          type2.style.backgroundColor = typeColor(entries[randomNum].type2)
+        }
         hintShow = true;
       } else {
         hintBox.style.visibility = "hidden";
@@ -185,4 +190,7 @@ resetLink2.addEventListener('click', function(){
   youLose.style.display = "none"
   newGame();
 });
-// resetLink.addEventListener('click', newGame());
+
+resetBttn.addEventListener('click', function(){
+  newGame();
+});

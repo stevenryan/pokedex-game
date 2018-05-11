@@ -66,8 +66,9 @@ body {
   font-size: 16px; }
 
 #pokemonName {
-  font-size: 50px;
-  margin-top: 80px; }
+  font-size: 48px;
+  margin-top: 80px;
+  font-family: generalText; }
 
 .guessed {
   grid-column-start: 1;
@@ -102,7 +103,8 @@ body {
   padding: 5px 10px 5px 10px;
   border-radius: 5px;
   outline: 0;
-  float: right; }
+  float: right;
+  margin: 10px 10px 0 0; }
 
 #hintBox {
   text-align: center;
@@ -147,30 +149,55 @@ body {
   background: rgba(226, 226, 226, 0.6);
   border-radius: 20px;
   display: grid;
-  grid-template-columns: 8fr 2fr;
+  grid-template-columns: 9fr 2fr;
   grid-template-rows: auto auto; }
 
 .row1 {
+  margin-top: 5px;
+  margin-left: 20px;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2; }
 
 .row2 {
+  margin-left: 20px;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3; }
 
-#resetBttn {
+.letters {
+  width: 60px;
+  height: 50px;
+  margin-left: 3px;
+  border-radius: 5px;
+  font-family: generalText; }
+
+.resetKey {
   float: right;
-  background-color: #66c2ff;
-  margin: 20px;
+  width: 100%;
   border-radius: 10px;
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
-  grid-row-end: 3; }
+  grid-row-end: 3;
+  text-align: center; }
+
+#resetBttn {
+  background-color: #66c2ff;
+  display: block;
+  width: 80%;
+  height: 90%;
+  margin-top: 5px;
+  margin-left: 5px;
+  justify-content: center;
+  border-radius: 5px;
+  font-family: generalText;
+  font-size: 18px; }
+
+#resetBttn:focus {
+  outline: none; }
 
 .modalWin {
   display: none;
@@ -203,12 +230,12 @@ body {
   position: absolute;
   color: #99ff99;
   z-index: 4;
-  right: 50px;
+  right: 70px;
   bottom: 130px; }
 
 .bgWhite {
   width: 65%;
-  height: 500px;
+  height: 600px;
   background-color: white;
   position: absolute;
   display: inline;
@@ -236,21 +263,21 @@ body {
   left: 20px; }
 
 #pokeImg {
-  max-width: 250px;
+  max-width: 300px;
   position: absolute;
   left: 60px; }
 
 #pokeImg2 {
-  width: 100px;
+  width: 150px;
   position: absolute;
   right: 80px;
   top: 60px; }
 
 .dexInfo {
   position: absolute;
-  width: 59%;
-  bottom: 100px;
-  left: 20px;
+  width: 680px;
+  bottom: 110px;
+  left: 24px;
   text-align: center;
   font-size: 14px;
   padding: 5px;
@@ -309,7 +336,7 @@ body {
   font-family: generalText; }
 
 #rivalGary {
-  width: 35%;
+  width: 350px;
   position: absolute;
   z-index: 3;
   bottom: 10px;
@@ -328,14 +355,14 @@ body {
 
 #pokeImg3 {
   position: absolute;
-  height: 100px;
-  top: 55px;
-  left: 30px; }
+  width: 100px;
+  top: 40px;
+  left: 25px; }
 
 .loseDiv {
   position: absolute;
   z-index: 3;
-  width: 47%;
+  width: 450px;
   bottom: 60px;
   right: 118px;
   text-align: center; }

@@ -6,11 +6,13 @@
   background: rgba(226, 226, 226, 0.6);
   border-radius: 20px;
   display: grid;
-  grid-template-columns: 8fr 2fr;
+  grid-template-columns: 9fr 2fr;
   grid-template-rows: auto auto;
 }
 
 .row1{
+  margin-top: 5px;
+  margin-left: 20px;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
@@ -18,19 +20,44 @@
 }
 
 .row2{
+  margin-left: 20px;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
 }
 
-#resetBttn{
+.letters{
+  width: 60px;
+  height: 50px;
+  margin-left: 3px;
+  border-radius: 5px;
+  font-family: generalText;
+}
+
+.resetKey{
   float: right;
-  background-color: #66c2ff;
-  margin: 20px;
+  width: 100%;
   border-radius: 10px;
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 3;
+  text-align: center;
+}
+#resetBttn{
+  background-color: #66c2ff;
+  display: block;
+  width: 80%;
+  height: 90%;
+  margin-top: 5px;
+  margin-left: 5px;
+  justify-content: center;
+  border-radius: 5px;
+  font-family: generalText;
+  font-size: 18px;
+}
+
+#resetBttn:focus{
+  outline: none;
 }

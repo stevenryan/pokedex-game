@@ -24,8 +24,9 @@
 }
 
 #pokemonName{
-  font-size: 50px;
+  font-size: 48px;
   margin-top: 80px;
+  font-family: generalText;
 }
 
 .guessed{
@@ -65,6 +66,7 @@
   border-radius: 5px;
   outline: 0;
   float: right;
+  margin: 10px 10px 0 0;
 }
 #hintBox{
   text-align: center;
