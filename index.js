@@ -1,4 +1,5 @@
 var letters = document.getElementsByClassName("letters")
+var usedLetters = document.getElementById("usedLetters")
 var pokemonName = document.getElementById("pokemonName")
 var life1 = document.getElementById("life1")
 var life2 = document.getElementById("life2")
@@ -6,11 +7,16 @@ var life3 = document.getElementById("life3")
 var life4 = document.getElementById("life4")
 var life5 = document.getElementById("life5")
 var life6 = document.getElementById("life6")
+var pokeImg = document.getElementById("pokeImg")
+var pokeImg2 = document.getElementById("pokeImg2")
+var pokeInfo = document.getElementById("pokeInfo")
 var hintBttn = document.getElementById("hintBttn")
 var hintBox = document.getElementById("hintBox")
 var type = document.getElementById("type")
 var type2 = document.getElementById("type2")
 var resetBttn = document.getElementById("resetBttn")
+var resetLink = document.getElementById("resetLink")
+var youWin = document.getElementById("youWin")
 var entries = []
 
 class Pokedex{
@@ -32,13 +38,16 @@ var entry5 = new Pokedex("Charmeleon", 5, "Fire", "", "It is very hot-headed by 
 var entry6 = new Pokedex("Charizard", 6, "Fire", "Flying", "Breathing intense, hot flames, it can melt almost anything. Its breath inflicts terrible pain on enemies.")
 var entry7 = new Pokedex("Squirtle", 7, "Water", "", "It shelters itself in its shell, then strikes back with spouts of water at every opportunity.")
 var entry8 = new Pokedex("Wartortle", 8, "Water", "", "It cleverly controls its furry ears and tail to maintain its balance while swimming.")
-var entry9 = new Pokedex("Blastoiseb", 9, "Water", "", "The rocket cannons on its shell fire jets of water capable of punching holes through thick steel.")
+var entry9 = new Pokedex("Blastoise", 9, "Water", "", "The rocket cannons on its shell fire jets of water capable of punching holes through thick steel.")
+
+setTimeout(newGame(), 1000);
 
 function newGame(){
   var lives = 6;
   hintDisplay();
   livesDisplay();
-  guessedLetters = []
+  guessedLetters = [];
+  usedLetters.innerHTML = ""
 
   for(let x=0; x<letters.length; x++){letters[x].disabled = false;}
 
@@ -73,6 +82,7 @@ function newGame(){
 
   function hintDisplay(){
     var hintShow = false;
+    hintBox.style.visibility = "hidden";
     hintBttn.addEventListener("click", function(){
       if (hintShow === false){
         hintBox.style.visibility = "visible";
@@ -92,9 +102,11 @@ function newGame(){
 
   }
 
-  function winModal(){
-
-  }
+  // function winModal(){
+  //   if(pokeActual === pokeHidden){
+  //     setTimeout (function(){youWin.style.display = "block";}, 1000);
+  //   }
+  // }
 
   for(let i=0; i<letters.length; i++){
     letters[i].addEventListener("click", function(){
@@ -112,8 +124,25 @@ function newGame(){
           livesDisplay();
         }
         guessedLetters.push(letters[i].value);
+        usedLetters.innerHTML = guessedLetters.join(", ");
         letters[i].disabled = true;
+      }
+      if(pokeHidden.includes('_')==false){
+        winModal();
       }
     })
   }
 }
+
+function winModal(){
+  setTimeout (function(){youWin.style.display = "block";}, 1500);
+  pokeImg.src = "images/officialArt/"+entries[randomNum].dexNum+".png"
+  pokeImg2.src = "images/sprites/"+entries[randomNum].dexNum+".png"
+  pokeInfo.innerHTML = entries[randomNum].description
+}
+
+resetLink.addEventListener('click', function(){
+  youWin.style.display = "none"
+  newGame();
+});
+// resetLink.addEventListener('click', newGame());

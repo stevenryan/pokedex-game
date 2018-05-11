@@ -10,14 +10,29 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 </head>
 <body>
-  <div id="youWin" class="modal">
-    <div class="modal-content">
+
+  <div id="youWin" class="modalWin">
+    <div class="contentWin">
       <img id="dex" src="images/pokedex-bg.gif" alt="">
+      <img id="profOak" src="images/oak-win.png" alt="">
+      <p class="pokeText"> Nice catch!<br><br><a href="#" id="resetLink">Play Again?</a></p>
+
+      <div class="bgWhite"></div>
+      <div class="dexDisplay">
+        <img id="pokeImg" src="">
+        <img id="pokeImg2" src="">
+      </div>
+
+      <div class="dexInfo">
+        <p id="pokeInfo"></p>
+      </div>
     </div>
   </div>
 
-  <div id="youLose" class="modal">
+  <div id="youLose" class="modalLose">
+    <div class="contentLose">
 
+    </div>
   </div>
 
   <div class="wrapper">
@@ -27,12 +42,16 @@
     </div>
     <div class="display">
       <div class="wordOutput">
-      <p>Pokemon:</p>
-      <h1 id="pokemonName"></h1>
+        <p><strong>Pokemon:</strong></p>
+        <h1 id="pokemonName"></h1>
+      </div>
+
+      <div class="guessed">
+        <p><strong>Used Letters:</strong></p><p id="usedLetters"></p>
       </div>
 
       <div class="lives">
-        <p>Lives:</p>
+        <p><strong>Lives:</strong></p>
         <img id="life1" src="images/pokeball-life.png" alt="">
         <img id="life2" src="images/pokeball-life.png" alt="">
         <img id="life3" src="images/pokeball-life.png" alt="">

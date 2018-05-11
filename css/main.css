@@ -36,7 +36,7 @@ body {
   text-align: center;
   grid-row-start: 1;
   grid-row-end: 2;
-  background: rgba(226, 226, 226, 0.5);
+  background: rgba(226, 226, 226, 0.6);
   margin: 10px auto;
   border-radius: 20px;
   justify-content: center;
@@ -47,11 +47,11 @@ body {
   grid-row-start: 2;
   grid-row-end: 3;
   margin: 10px auto;
-  background: rgba(226, 226, 226, 0.5);
+  background: rgba(226, 226, 226, 0.6);
   border-radius: 20px;
   display: grid;
   grid-template-columns: 8fr 2fr;
-  grid-template-rows: 3fr 1fr; }
+  grid-template-rows: 2fr .5fr .6fr; }
 
 .wordOutput {
   grid-column-start: 1;
@@ -59,7 +59,7 @@ body {
   grid-row-start: 1;
   grid-row-end: 2;
   border: 2px solid;
-  margin: 10px;
+  margin: 5px;
   text-align: center; }
 
 .wordOutput p {
@@ -68,15 +68,32 @@ body {
 
 #pokemonName {
   font-size: 50px;
-  margin-top: 100px; }
+  margin-top: 80px; }
 
-.lives {
+.guessed {
+  border: 2px solid green;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
+  margin: 5px;
+  font-family: generalText;
+  font-size: 12px;
+  padding-left: 5px; }
+
+.guessed p {
+  float: left; }
+
+#usedLetters {
+  margin-left: 5px; }
+
+.lives {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
   border: 2px solid red;
-  margin: 10px;
+  margin: 5px;
   text-align: center;
   font-family: generalText;
   font-size: 12px; }
@@ -95,19 +112,19 @@ body {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-end: 4;
   border: 2px solid blue;
-  margin: 10px; }
+  margin: 5px; }
 
 .keyboard {
   width: 80%;
   grid-row-start: 3;
   grid-row-end: 4;
   margin: 10px auto;
-  background: rgba(226, 226, 226, 0.5);
+  background: rgba(226, 226, 226, 0.6);
   border-radius: 20px;
   display: grid;
-  grid-template-columns: 9fr 1fr;
+  grid-template-columns: 8fr 2fr;
   grid-template-rows: auto auto; }
 
 .row1 {
@@ -132,7 +149,115 @@ body {
   grid-row-start: 1;
   grid-row-end: 3; }
 
-.modal {
+.modalWin {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); }
+
+.contentWin {
+  border-radius: 5px;
+  position: relative;
+  background-color: #ccffcc;
+  margin: 0 auto;
+  padding: 0;
+  margin: auto;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  font-family: generalText; }
+
+.pokeText {
+  position: absolute;
+  color: #99ff99;
+  z-index: 4;
+  right: 50px;
+  bottom: 130px; }
+
+.bgWhite {
+  width: 65%;
+  height: 500px;
+  background-color: white;
+  position: absolute;
+  display: inline;
+  top: 2px;
+  left: 2px; }
+
+#dex {
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+  position: relative;
+  z-index: 3; }
+
+#profOak {
+  position: absolute;
+  width: 20%;
+  z-index: 2;
+  top: 30px;
+  right: 50px; }
+
+.dexDisplay {
+  position: absolute;
+  width: 60%;
+  top: 70px;
+  left: 20px; }
+
+#pokeImg {
+  max-width: 250px;
+  position: absolute;
+  left: 60px; }
+
+#pokeImg2 {
+  width: 100px;
+  position: absolute;
+  right: 80px;
+  top: 60px; }
+
+.dexInfo {
+  position: absolute;
+  width: 59%;
+  bottom: 100px;
+  left: 20px;
+  text-align: center;
+  font-size: 14px;
+  padding: 5px;
+  background-color: #ccffcc;
+  border-radius: 5px; }
+
+#resetLink {
+  text-decoration: none;
+  color: #99ff99;
+  font-size: 18px; }
+
+#resetLink:hover {
+  font-weight: bold;
+  text-shadow: 0 0px 3px #ccffcc; }
+
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0; }
+  to {
+    top: 0;
+    opacity: 1; } }
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0; }
+  to {
+    top: 0;
+    opacity: 1; } }
+.modalLose {
   display: block;
   position: fixed;
   z-index: 1;
@@ -144,19 +269,34 @@ body {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4); }
 
-.modal-content {
+.contentLose {
+  border-radius: 5px;
   position: relative;
-  background-color: #9fff80;
+  background-color: #ccffcc;
   margin: 0 auto;
   padding: 0;
   margin: auto;
   width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
-  animation-duration: 0.4s; }
+  animation-duration: 0.4s;
+  font-family: generalText; }
 
-#dex {
-  width: 100%; }
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0; }
+  to {
+    top: 0;
+    opacity: 1; } }
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0; }
+  to {
+    top: 0;
+    opacity: 1; } }
 
 /*# sourceMappingURL=main.css.map */

@@ -3,11 +3,11 @@
   grid-row-start: 2;
   grid-row-end: 3;
   margin: 10px auto;
-  background: rgba(226, 226, 226, 0.5);
+  background: rgba(226, 226, 226, 0.6);
   border-radius: 20px;
   display: grid;
   grid-template-columns: 8fr 2fr;
-  grid-template-rows: 3fr 1fr;
+  grid-template-rows: 2fr .5fr .6fr;
 }
 
 .wordOutput{
@@ -16,25 +16,46 @@
   grid-row-start: 1;
   grid-row-end: 2;
   border: 2px solid;
-  margin: 10px;
+  margin: 5px;
   text-align: center;
 }
 .wordOutput p{
   font-family: generalText;
   font-size: 16px;
 }
+
 #pokemonName{
   font-size: 50px;
-  margin-top: 100px;
+  margin-top: 80px;
+}
+
+.guessed{
+  border: 2px solid green;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  margin: 5px;
+  font-family: generalText;
+  font-size: 12px;
+  padding-left: 5px;
+}
+
+.guessed p{
+  float: left;
+}
+
+#usedLetters{
+  margin-left: 5px;
 }
 
 .lives{
   grid-column-start: 1;
   grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
   border: 2px solid red;
-  margin: 10px;
+  margin: 5px;
   text-align: center;
   font-family: generalText;
   font-size: 12px;
@@ -46,7 +67,6 @@
 
 #hintBttn{
   padding: 5px 10px 5px 10px;
-  // width: 50px;
   border-radius: 5px;
   outline: 0;
   float: right;
@@ -55,7 +75,7 @@
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
-  grid-row-end: 3;
+  grid-row-end: 4;
   border: 2px solid blue;
-  margin: 10px;
+  margin: 5px;
 }
