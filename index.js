@@ -21,6 +21,7 @@ var youWin = document.getElementById("youWin")
 var youLose = document.getElementById("youLose")
 var loseText = document.getElementById("loseText")
 var entries = []
+var lives
 
 class Pokedex{
   constructor(name, dexNum, type, type2, description){
@@ -42,11 +43,22 @@ var entry6 = new Pokedex("Charizard", 6, "Fire", "Flying", "Breathing intense, h
 var entry7 = new Pokedex("Squirtle", 7, "Water", "", "It shelters itself in its shell, then strikes back with spouts of water at every opportunity.")
 var entry8 = new Pokedex("Wartortle", 8, "Water", "", "It cleverly controls its furry ears and tail to maintain its balance while swimming.")
 var entry9 = new Pokedex("Blastoise", 9, "Water", "", "The rocket cannons on its shell fire jets of water capable of punching holes through thick steel.")
+var entry10 = new Pokedex("Caterpie", 10, "Bug", "", "Its feet have suction cups designed to stick to any surface. It tenaciously climbs trees to forage.")
+var entry11 = new Pokedex("Metapod", 11, "Bug", "", "Inside the shell, it is soft and weak as it prepares to evolve. It stays motionless in the shell.")
+var entry12 = new Pokedex("Butterfree", 12, "Bug", "Flying", "Its wings, covered with poisonous powders, repel water. This allows it to fly in the rain.")
+var entry13 = new Pokedex("Weedle", 13, "Bug", "Poison", "Often found in forests, eating leaves. It has a sharp venomous stinger on its head.")
+var entry14 = new Pokedex("Kakuna", 14, "Bug", "Poison", "Although it is a cocoon, it can move a little. It can extend its poison barb if it is attacked.")
+var entry15 = new Pokedex("Beedrill", 15, "Bug", "Poison", "It can take down any opponent with its powerful poison stingers. It sometimes attacks in swarms.")
+var entry16 = new Pokedex("Pidgey", 16, "Normal", "Flying", "A common sight in forests and woods. It flaps its wings at ground level to kick up blinding sand.")
+var entry17 = new Pokedex("Pidgeotto", 17, "Normal", "Flying", "This Pokémon is full of vitality. It constantly flies around its large territory in search of prey.")
+var entry18 = new Pokedex("Pidgeot", 18, "Normal", "Flying", "This Pokémon flies at Mach 2 speed, seeking prey. Its large talons are feared as wicked weapons.")
+var entry19 = new Pokedex("Rattata", 19, "Normal", "", "Bites anything when it attacks. Small and very quick, it is a common sight in many places.")
+var entry20 = new Pokedex("Raticate", 20, "Normal", "", "Gnaws on anything with its tough fangs. It can even topple concrete buildings by gnawing on them.")
 
 setTimeout(newGame(), 1000);
 
 function newGame(){
-  var lives = 6;
+  lives = 6;
   hintDisplay();
   livesDisplay();
   guessedLetters = [];
