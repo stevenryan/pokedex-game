@@ -9,6 +9,7 @@ var life5 = document.getElementById("life5")
 var life6 = document.getElementById("life6")
 var pokeImg = document.getElementById("pokeImg")
 var pokeImg2 = document.getElementById("pokeImg2")
+var pokeImg3 = document.getElementById("pokeImg3")
 var pokeInfo = document.getElementById("pokeInfo")
 var hintBttn = document.getElementById("hintBttn")
 var hintBox = document.getElementById("hintBox")
@@ -17,6 +18,8 @@ var type2 = document.getElementById("type2")
 var resetBttn = document.getElementById("resetBttn")
 var resetLink = document.getElementById("resetLink")
 var youWin = document.getElementById("youWin")
+var youLose = document.getElementById("youLose")
+var loseText = document.getElementById("loseText")
 var entries = []
 
 class Pokedex{
@@ -88,7 +91,9 @@ function newGame(){
         hintBox.style.visibility = "visible";
         hintBttn.innerHTML = "<i class='fas fa-times fa-2x'></i>";
         type.innerHTML = entries[randomNum].type;
+        type.style.backgroundColor = typeColor(entries[randomNum].type)
         type2.innerHTML = entries[randomNum].type2;
+        type2.style.backgroundColor = typeColor(entries[randomNum].type2)
         hintShow = true;
       } else {
         hintBox.style.visibility = "hidden";
@@ -97,16 +102,6 @@ function newGame(){
       }
     })
   }
-
-  function loseModal(){
-
-  }
-
-  // function winModal(){
-  //   if(pokeActual === pokeHidden){
-  //     setTimeout (function(){youWin.style.display = "block";}, 1000);
-  //   }
-  // }
 
   for(let i=0; i<letters.length; i++){
     letters[i].addEventListener("click", function(){
@@ -134,15 +129,60 @@ function newGame(){
   }
 }
 
+function typeColor(type){
+  if (type.toLowerCase()==="bug"){
+    return "#a8b820"
+  } else if (type.toLowerCase()==="water"){
+    return "#6890f0"
+  } else if (type.toLowerCase()==="fire"){
+    return "#f08030"
+  } else if (type.toLowerCase()==="grass"){
+    return "#77c950"
+  } else if (type.toLowerCase()==="electric"){
+    return "#f8d030"
+  } else if (type.toLowerCase()==="ice"){
+    return "#98d8d9"
+  } else if (type.toLowerCase()==="dragon"){
+    return "#7038f8"
+  } else if (type.toLowerCase()==="ground"){
+    return "#e0c068"
+  } else if (type.toLowerCase()==="rock"){
+    return "#b8a038"
+  } else if (type.toLowerCase()==="flying"){
+    return "#a88ff0"
+  } else if (type.toLowerCase()==="poison"){
+    return "#9f40a0"
+  } else if (type.toLowerCase()==="psychic"){
+    return "#f85788"
+  } else if (type.toLowerCase()==="ghost"){
+    return "#6f5798"
+  } else if (type.toLowerCase()==="fighting"){
+    return "#c03028"
+  } else if (type.toLowerCase()==="normal"){
+    return "#a8a878"
+  } else {}
+}
+
 function winModal(){
-  setTimeout (function(){youWin.style.display = "block";}, 1500);
+  setTimeout (function(){youWin.style.display = "block";}, 1000);
   pokeImg.src = "images/officialArt/"+entries[randomNum].dexNum+".png"
   pokeImg2.src = "images/sprites/"+entries[randomNum].dexNum+".png"
   pokeInfo.innerHTML = entries[randomNum].description
 }
 
+function loseModal(){
+  setTimeout (function(){youLose.style.display = "block";}, 1000);
+  loseText.innerHTML = "It's "+entries[randomNum].name+"! Loser, you'll never be a Pokemon Champion!"
+  pokeImg3.src = "images/sprites/"+entries[randomNum].dexNum+".png"
+}
+
 resetLink.addEventListener('click', function(){
   youWin.style.display = "none"
+  newGame();
+});
+
+resetLink2.addEventListener('click', function(){
+  youLose.style.display = "none"
   newGame();
 });
 // resetLink.addEventListener('click', newGame());

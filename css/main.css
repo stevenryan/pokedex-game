@@ -58,7 +58,6 @@ body {
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
-  border: 2px solid;
   margin: 5px;
   text-align: center; }
 
@@ -71,7 +70,6 @@ body {
   margin-top: 80px; }
 
 .guessed {
-  border: 2px solid green;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 2;
@@ -79,10 +77,9 @@ body {
   margin: 5px;
   font-family: generalText;
   font-size: 12px;
-  padding-left: 5px; }
-
-.guessed p {
-  float: left; }
+  padding-left: 10px;
+  text-align: center;
+  height: 3em; }
 
 #usedLetters {
   margin-left: 5px; }
@@ -92,7 +89,6 @@ body {
   grid-column-end: 2;
   grid-row-start: 3;
   grid-row-end: 4;
-  border: 2px solid red;
   margin: 5px;
   text-align: center;
   font-family: generalText;
@@ -108,12 +104,39 @@ body {
   outline: 0;
   float: right; }
 
+#hintBox {
+  text-align: center;
+  padding-top: 50px;
+  font-family: generalText; }
+
+.typeTitle {
+  font-size: 12px; }
+
+#type {
+  margin: 40px auto 40px auto;
+  padding: 20px 0px;
+  width: 80%;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  font-family: generalText;
+  font-size: 10px; }
+
+#type2 {
+  margin: 10px auto;
+  padding: 20px 0px;
+  width: 80%;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  font-family: generalText;
+  font-size: 10px; }
+
 .hintSection {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 4;
-  border: 2px solid blue;
   margin: 5px; }
 
 .keyboard {
@@ -258,7 +281,7 @@ body {
     top: 0;
     opacity: 1; } }
 .modalLose {
-  display: block;
+  display: none;
   position: fixed;
   z-index: 1;
   padding-top: 50px;
@@ -271,18 +294,60 @@ body {
 
 .contentLose {
   border-radius: 5px;
+  background-color: white;
   position: relative;
-  background-color: #ccffcc;
   margin: 0 auto;
   padding: 0;
   margin: auto;
   width: 80%;
+  height: 600px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s;
   font-family: generalText; }
+
+#rivalGary {
+  width: 35%;
+  position: absolute;
+  z-index: 3;
+  bottom: 10px;
+  left: 40px; }
+
+#badges {
+  position: absolute;
+  z-index: 2;
+  right: -30px; }
+
+#textBox {
+  position: absolute;
+  z-index: 2;
+  bottom: 20px;
+  right: 90px; }
+
+#pokeImg3 {
+  position: absolute;
+  height: 100px;
+  top: 55px;
+  left: 30px; }
+
+.loseDiv {
+  position: absolute;
+  z-index: 3;
+  width: 47%;
+  bottom: 60px;
+  right: 118px;
+  text-align: center; }
+
+#resetLink2 {
+  text-decoration: none;
+  color: black;
+  font-size: 18px; }
+
+#resetLink2:hover {
+  font-weight: bold;
+  text-shadow: 0 0px 3px #595959; }
 
 @-webkit-keyframes animatetop {
   from {

@@ -1,5 +1,5 @@
 .modalLose {
-    display: block;
+    display: none;
     position: fixed;
     z-index: 1;
     padding-top: 50px;
@@ -13,18 +13,67 @@
 
 .contentLose {
     border-radius: 5px;
+    background-color: white;
     position: relative;
-    background-color: #ccffcc;
     margin: 0 auto;
     padding: 0;
     margin: auto;
     width: 80%;
+    height: 600px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.2);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s;
     font-family: generalText;
+  }
+
+  #rivalGary{
+    width: 35%;
+    position: absolute;
+    z-index: 3;
+    bottom: 10px;
+    left: 40px;
+  }
+
+  #badges{
+    position: absolute;
+    z-index: 2;
+    right: -30px;
+  }
+
+  #textBox{
+    position: absolute;
+    z-index: 2;
+    bottom: 20px;
+    right: 90px;
+  }
+
+  #pokeImg3{
+    position: absolute;
+    height: 100px;
+    top: 55px;
+    left: 30px;
+  }
+
+  .loseDiv{
+    position: absolute;
+    z-index: 3;
+    width: 47%;
+    bottom: 60px;
+    right: 118px;
+    text-align: center;
+  }
+
+  #resetLink2{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+  }
+
+  #resetLink2:hover{
+    font-weight: bold;
+    text-shadow: 0 0px 3px #595959;
   }
 
   @-webkit-keyframes animatetop {
