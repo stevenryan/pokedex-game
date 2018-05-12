@@ -34,6 +34,15 @@
   border-radius: 5px;
   font-family: generalText;
 }
+.letters:focus{
+  outline:none;
+}
+.letters:hover{
+  background-color: #80ccff;
+}
+.letters:active{
+  background-color: #4db8ff;
+}
 
 .resetKey{
   float: right;
@@ -46,7 +55,7 @@
   text-align: center;
 }
 #resetBttn{
-  background-color: #66c2ff;
+  background-color: #ffffff;
   display: block;
   width: 80%;
   height: 90%;
@@ -57,7 +66,12 @@
   font-family: generalText;
   font-size: 18px;
 }
-
 #resetBttn:focus{
   outline: none;
+}
+#resetBttn:hover{
+  background-color: #80ccff;
+}
+#resetBttn:active{
+  background-color: #4db8ff;
 }
