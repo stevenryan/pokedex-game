@@ -7,16 +7,17 @@
 @font-face {
   font-family: unknown;
   src: url(../fonts/unown.ttf); }
-.wrapper {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 1fr 3.5fr 1fr; }
-
 body {
   background: url(../images/kanto-bg2.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 3.5fr 1fr;
+  max-height: 80vh; }
 
 #title {
   font-family: headerFont;
@@ -85,26 +86,48 @@ body {
 #usedLetters {
   margin-left: 5px; }
 
-.lives {
+.display-bottom-row {
+  display: grid;
+  grid-template-columns: auto auto;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 3;
   grid-row-end: 4;
-  margin: 5px;
+  margin: 5px; }
+
+.lives {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
   text-align: center;
   font-family: generalText;
-  font-size: 12px; }
+  font-size: 12px;
+  padding: 2px;
+  width: 100%; }
 
 .lives img {
   width: 50px;
   margin: 0 auto; }
+
+.score {
+  font-family: generalText;
+  width: 100%;
+  text-align: center;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1; }
+  .score #score {
+    font-size: 28px; }
 
 #hintBttn {
   padding: 5px 10px 5px 10px;
   border-radius: 5px;
   outline: 0;
   float: right;
-  margin: 10px 10px 0 0; }
+  width: 50%;
+  margin-right: 25%; }
 
 #hintBox {
   text-align: center;
@@ -134,12 +157,24 @@ body {
   font-family: generalText;
   font-size: 10px; }
 
-.hintSection {
+.display-right-column {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 4;
-  margin: 5px; }
+  margin: 5px;
+  display: grid;
+  grid-template-rows: 1fr 3fr; }
+
+.timerSection {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  text-align: center;
+  font-family: generalText;
+  font-size: 12px;
+  padding: 2px; }
+  .timerSection #timer {
+    font-size: 28px; }
 
 .keyboard {
   width: 80%;
@@ -153,7 +188,7 @@ body {
   grid-template-rows: auto auto; }
 
 .row1 {
-  margin-top: 5px;
+  margin-top: 3px;
   margin-left: 20px;
   grid-column-start: 1;
   grid-column-end: 2;
@@ -165,7 +200,8 @@ body {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 2;
-  grid-row-end: 3; }
+  grid-row-end: 3;
+  margin-bottom: 3px; }
 
 .letters {
   width: 60px;
@@ -182,6 +218,10 @@ body {
 
 .letters:active {
   background-color: #4db8ff; }
+
+.letters:disabled {
+  background-color: lightgrey;
+  color: grey; }
 
 .resetKey {
   float: right;
@@ -218,7 +258,7 @@ body {
   display: none;
   position: fixed;
   z-index: 1;
-  padding-top: 50px;
+  padding-top: 30px;
   left: 0;
   top: 0;
   width: 100%;
@@ -226,7 +266,7 @@ body {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4); }
 
-.contentWin {
+#dexContent {
   border-radius: 5px;
   position: relative;
   background-color: #ccffcc;
@@ -239,13 +279,15 @@ body {
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s;
-  font-family: generalText; }
+  font-family: generalText;
+  overflow: auto; }
 
-.pokeText {
+#modalTextBox {
+  width: 260px;
+  z-index: 4;
   position: absolute;
   color: #99ff99;
-  z-index: 4;
-  right: 70px;
+  right: 25px;
   bottom: 130px; }
 
 .bgWhite {
@@ -264,35 +306,47 @@ body {
   position: relative;
   z-index: 3; }
 
-#profOak {
+#caller {
   position: absolute;
   width: 20%;
   z-index: 2;
   top: 30px;
   right: 50px; }
 
+#dexEntry {
+  max-height: 520px;
+  height: 520px;
+  width: 700px;
+  overflow: scroll;
+  position: absolute;
+  top: 21px;
+  left: 21px;
+  z-index: 2; }
+
+.mySlides {
+  display: none; }
+
+.contentWin {
+  height: 100%;
+  width: 100%; }
+
 .dexDisplay {
-  position: absolute;
-  width: 60%;
-  top: 70px;
-  left: 20px; }
+  width: 90%;
+  margin: 0 auto; }
 
-#pokeImg {
-  max-width: 300px;
-  position: absolute;
-  left: 60px; }
+.pokeImg {
+  max-width: 350px;
+  margin: 10px 35px; }
 
-#pokeImg2 {
+.pokeImg2 {
   width: 150px;
   position: absolute;
-  right: 80px;
-  top: 65px; }
+  margin-left: 10px;
+  bottom: 152px; }
 
 .dexInfo {
   position: absolute;
-  width: 680px;
-  bottom: 110px;
-  left: 27px;
+  bottom: 0px;
   text-align: center;
   font-size: 14px;
   padding: 5px;
@@ -307,6 +361,32 @@ body {
 #resetLink:hover {
   font-weight: bold;
   text-shadow: 0 0px 3px #ccffcc; }
+
+.prevEntry, .nextEntry {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 20px;
+  color: lightgreen;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  z-index: 5; }
+
+.prevEntry {
+  left: 22px;
+  font-size: 30px; }
+
+.nextEntry {
+  right: 432px;
+  border-radius: 3px 0 0 3px;
+  font-size: 30px; }
+
+.prevEntry:hover, .nextEntry:hover {
+  background-color: rgba(0, 0, 0, 0.8); }
 
 @-webkit-keyframes animatetop {
   from {

@@ -5,6 +5,13 @@ body{
   background-attachment: fixed;
 }
 
+.wrapper{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 3.5fr 1fr;
+  max-height: 80vh;
+}
+
 #title{
   font-family: headerFont;
   font-size: 60px;

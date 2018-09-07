@@ -2,7 +2,7 @@
     display: none;
     position: fixed;
     z-index: 1;
-    padding-top: 50px;
+    padding-top: 30px;
     left: 0;
     top: 0;
     width: 100%;
@@ -11,29 +11,39 @@
     background-color: rgba(0,0,0,0.4);
 }
 
-.contentWin{
-    border-radius: 5px;
-    position: relative;
-    background-color: #ccffcc;
-    margin: 0 auto;
-    padding: 0;
-    margin: auto;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.2);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s;
-    font-family: generalText;
-  }
+#dexContent {
+  border-radius: 5px;
+  position: relative;
+  background-color: #ccffcc;
+  margin: 0 auto;
+  padding: 0;
+  margin: auto;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  font-family: generalText;
+  overflow: auto;}
 
-.pokeText{
+
+#modalTextBox{
+  width: 260px;
+  z-index: 4;
   position: absolute;
   color: #99ff99;
-  z-index: 4;
-  right: 70px;
+  right: 25px;
   bottom: 130px;
 }
+
+// .pokeText{
+//   position: absolute;
+//   color: #99ff99;
+//   z-index: 4;
+//   right: 70px;
+//   bottom: 130px;
+// }
 
 .bgWhite{
   width: 65%;
@@ -53,7 +63,7 @@
   z-index: 3;
 }
 
-#profOak{
+#caller{
   position: absolute;
   width: 20%;
   z-index: 2;
@@ -61,37 +71,48 @@
   right: 50px;
 }
 
-.dexDisplay{
+#dexEntry{
+  max-height: 520px;
+  height: 520px;
+  width: 700px;
+  overflow: scroll;
   position: absolute;
-  width: 60%;
-  top: 70px;
-  left: 20px;
+  top: 21px;
+  left: 21px;
+  z-index: 2;
 }
 
-#pokeImg{
-  max-width: 300px;
-  position: absolute;
-  left: 60px;
+.mySlides{
+  display: none;
 }
 
-#pokeImg2{
+.contentWin {
+  height: 100%;
+  width: 100%;
+}
+
+.dexDisplay {
+  width: 90%;
+  margin: 0 auto;}
+
+.pokeImg {
+  max-width: 350px;
+  margin: 10px 35px;}
+
+.pokeImg2 {
   width: 150px;
   position: absolute;
-  right: 80px;
-  top: 65px;
-}
+  margin-left: 10px;
+  bottom: 152px;}
 
-.dexInfo{
+.dexInfo {
   position: absolute;
-  width: 680px;
-  bottom: 110px;
-  left: 27px;
+  bottom: 0px;
   text-align: center;
   font-size: 14px;
   padding: 5px;
   background-color: #ccffcc;
-  border-radius: 5px;
-}
+  border-radius: 5px;}
 
 #resetLink{
   text-decoration: none;
@@ -102,6 +123,33 @@
 #resetLink:hover{
   font-weight: bold;
   text-shadow: 0 0px 3px #ccffcc;
+}
+
+.prevEntry, .nextEntry {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 20px;
+  color: lightgreen;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  z-index: 5;
+}
+.prevEntry{
+  left: 22px;
+  font-size: 30px;
+}
+.nextEntry {
+  right: 432px;
+  border-radius: 3px 0 0 3px;
+  font-size: 30px;
+}
+.prevEntry:hover, .nextEntry:hover {
+  background-color: rgba(0,0,0,0.8);
 }
 
 @-webkit-keyframes animatetop {

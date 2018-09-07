@@ -12,20 +12,20 @@
 <body>
 
   <div id="youWin" class="modalWin">
-    <div class="contentWin">
+    <div id="dexContent">
       <img id="dex" src="images/pokedex-bg.gif" alt="">
-      <img id="profOak" src="images/oak-win.png" alt="">
-      <p class="pokeText"> Nice catch!<br><br><a href="#" id="resetLink">Play Again?</a></p>
+      <img id="caller" src="images/oak-win.png" alt="">
+      <div id="modalTextBox">
+        <p class="pokeText"><span id="modalText">Great Catches!</span><br><br><a href="#" id="resetLink">Play Again?</a></p>
+      </div>
+
+      <div id="dexEntry">
+      </div>
+
+      <a id="prevEntry"class="prevEntry">&#10094;</a>
+      <a id="nextEntry"class="nextEntry">&#10095;</a>
 
       <div class="bgWhite"></div>
-      <div class="dexDisplay">
-        <img id="pokeImg" src="">
-        <img id="pokeImg2" src="">
-      </div>
-
-      <div class="dexInfo">
-        <p id="pokeInfo"></p>
-      </div>
     </div>
   </div>
 
@@ -57,6 +57,7 @@
         <p><strong>Used Letters:</strong></p><p id="usedLetters"></p>
       </div>
 
+    <div class="display-bottom-row">
       <div class="lives">
         <p><strong>Lives:</strong></p>
         <img id="life1" src="images/pokeball-life.png" alt="">
@@ -67,8 +68,18 @@
         <img id="life6" src="images/pokeball-life.png" alt="">
       </div>
 
+      <div class="score">
+        <p><strong>Score:</strong></p><p id="score">0</p>
+      </div>
+    </div>
+
+    <div class="display-right-column">
+      <div class="timerSection">
+        <p><strong>Timer:</strong></p><p id="timer"></p>
+      </div>
+
       <div class="hintSection">
-        <button id="hintBttn" title="Need a hint?"><i class="fas fa-question fa-2x"></i></button>
+        <!-- <button id="hintBttn" title="Need a hint?">Show Hint</button> -->
         <div id="hintBox">
           <p class"typeTitle"><strong>Type:</strong></p>
           <div id="type"></div>
@@ -76,6 +87,8 @@
         </div>
       </div>
     </div>
+  </div>
+
     <div class="keyboard">
       <div class="row1">
         <button class="letters" value="A">A</button>
