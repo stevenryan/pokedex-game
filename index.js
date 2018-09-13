@@ -83,14 +83,20 @@ var entry39 = new Pokedex1("Jigglypuff", 39, "Normal", "", "Uses its alluring ey
 var entry40 = new Pokedex1("Wigglytuff", 40, "Normal", "", "Their fur feels so good that if two of them snuggle together, they won't want to be separated.")
 var entry41 = new Pokedex1("Zubat", 41, "Poison", "Flying", "Forms colonies in perpetually dark places. Uses ultrasonic waves to identify and approach targets.")
 var entry42 = new Pokedex1("Golbat", 42, "Poison", "Flying", "Once it strikes, it will not stop draining energy from the victim even if it gets too heavy to fly.")
-var entry42 = new Pokedex1("Oddish", 43, "Grass", "Poison", "During the day, it keeps its face buried in the ground. At night, it wanders around sowing its seeds.")
-var entry42 = new Pokedex1("Gloom", 44, "Grass", "Poison", "The fluid that oozes from its mouth isn't drool. It is a nectar that is used to attract prey.")
-var entry42 = new Pokedex1("Vileplume", 45, "Grass", "Poison", "It has the world's largest petals. With every step, the petals shake out heavy clouds of toxic pollen.")
+var entry43 = new Pokedex1("Oddish", 43, "Grass", "Poison", "During the day, it keeps its face buried in the ground. At night, it wanders around sowing its seeds.")
+var entry44 = new Pokedex1("Gloom", 44, "Grass", "Poison", "The fluid that oozes from its mouth isn't drool. It is a nectar that is used to attract prey.")
+var entry45 = new Pokedex1("Vileplume", 45, "Grass", "Poison", "It has the world's largest petals. With every step, the petals shake out heavy clouds of toxic pollen.")
+var entry46 = new Pokedex1("Paras", 46, "Bug", "Grass", "Burrows to suck tree roots. The mushrooms on its back grow by drawing nutrients from the bug host.")
+var entry47 = new Pokedex1("Parasect", 47, "Bug", "Grass", "A host-parasite pair in which the parasite mushroom has taken over the host bug. Prefers damp places.")
+var entry48 = new Pokedex1("Venonat", 48, "Bug", "Poison", "Its large eyes act as radars. In a bright place, you can see that they are clusters of many tiny eyes.")
+var entry49 = new Pokedex1("Venomoth", 49, "Bug", "Poison", "The powdery scales on its wings are hard to remove. They also contain poison that leaks out on contact.")
+var entry50 = new Pokedex1("Diglett", 50, "Ground", "", "Lives about one yard underground where it feeds on plant roots. It sometimes appears above ground.")
+var entry51 = new Pokedex1("Dugtrio", 51, "Ground", "", "A team of triplets that can burrow over 60 MPH. Due to this, some people think it's an earthquake.")
 
 setTimeout(newGame(), 1000);
 
 function newGame(){
-  timer.innerHTML = 01 + ":" + 01;
+  timer.innerHTML = 01 + ":" + 31;
   points = 0;
   lives = 6;
   generateName();
